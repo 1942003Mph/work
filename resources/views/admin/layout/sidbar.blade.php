@@ -33,25 +33,38 @@
             </a>
           </li>
         
-            {{-- <li class="nav-item ">
+            <li class="nav-item ">
               <a href="" class="nav-link">
                 <i class="fa-solid fa-bell-concierge"></i> 
                 <p>
-                  services
+                  الموظفون
                   <i class="right fas fa-angle-left"></i>
                 </p>
               </a>
               <ul class="nav nav-treeview">
                 <li class="nav-item">
-                  <a href="{{ route("admin.services.index") }}" class="nav-link">
+                  <a href="{{ route("admin.employees.index") }}" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
-                    <p>All services</p>
+                    <p>جميع الموظفون</p>
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="{{ route("admin.services.create") }}" class="nav-link">
+                  <a href="" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
-                    <p>create</p>
+                    <p> الشفت الصباحي</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p> الشفت المسائي</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="" class="nav-link">
+                    {{-- {{ route("admin.services.create") }} --}}
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>أضف موظف جديد</p>
                   </a>
                 </li>
               </ul>
@@ -66,20 +79,20 @@
               </a>
               <ul class="nav nav-treeview">
                 <li class="nav-item">
-                  <a href="{{ route("admin.services.index") }}" class="nav-link">
+                  <a href="" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
                     <p>All services</p>
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="{{ route("admin.services.create") }}" class="nav-link">
+                  <a href="" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
                     <p>create</p>
                   </a>
                 </li>
               </ul>
             </li>
-            <li class="nav-item ">
+            {{-- <li class="nav-item ">
               <a href="" class="nav-link">
                 <i class="fa-solid fa-sliders"></i>
                 <p>

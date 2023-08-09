@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 class employee extends Model
 {
     use HasFactory;
+    protected $guarded = [] ;
     public function followup(){
         return $this->hasMany(followup::class , 'employees_id' , 'id');
     }

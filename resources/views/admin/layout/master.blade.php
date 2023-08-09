@@ -40,23 +40,22 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <div class="row mb-2">
           <div class="col-sm-6">
             <h1 class="m-0 text-dark">لوحة التحكم</h1>
-          </div><!-- /.col -->
-          <!-- /.col -->
+          </div>
         </div><!-- /.row -->
-      </div><!-- /.container-fluid -->
+      </div>
+      <section class="content">
+        <div class="container-fluid">
+          @yield('content')
+        </div>
+        <!-- /.container-fluid -->
+      </section><!-- /.container-fluid -->
     </div>
     <!-- /.content-header -->
   </div>
   <!-- /.content-wrapper -->
 
  <!-- Main content -->
- <section class="content">
-  <div class="container-fluid">
-    @yield('content')
-    <!-- /.row -->
-  </div>
-  <!-- /.container-fluid -->
-</section>
+ 
 <!-- /.content -->
 </div>
 <!-- /.content-wrapper -->

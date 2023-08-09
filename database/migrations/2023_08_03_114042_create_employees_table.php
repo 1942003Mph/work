@@ -14,7 +14,8 @@ return new class extends Migration
         Schema::create('employees', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->integer('jobnumber');
+            $table->string('jobnumber');
+            $table->string('jop');
             $table->string('perod');
             $table->timestamps();
         });

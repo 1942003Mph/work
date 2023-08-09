@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Admin\EmployeesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,4 +16,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('',[Controller::class, "index"]) ;
+Route::prefix('admin')->name('admin.')->group(function() { 
+    Route::get('/' , [AdminController::class , "index"])->name('index');       
+    Route::resource('employees', EmployeesController::class);  
+    // Route::resource('caregory', categoryController::class);  
+    // Route::resource('sliders', SliderController::class);  
+    // Route::resource('services', ServiceController::class);  
+    // Route::resource('ourwork', WorkController::class);  
+    // Route::resource('featurs', FeatursController::class);  
+    // Route::resource('teams', TeamController::class);  
+    // Route::resource('settings', TeamController::class);  
+    });
