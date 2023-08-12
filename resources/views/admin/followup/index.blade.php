@@ -1,18 +1,25 @@
+
 @extends('admin.layout.master')
-@section('title' , 'employees')
+@section('title' , 'المتابعة')
 @section('content')
-@section('H1' , 'جميع الموظفين')
-@extends('admin.employees.masteremployee' , ['employees'=>$employees])
-@section('new' , 'اضف موظف جديد')
-@section('search')
-<form action="{{ route('admin.employees.index') }}" method="GET">
+@section('H1' , 'متابعة حضور الشفت الصباحي')
+@extends('admin.followup.masterfollowup' , ['employees'=>$employees])
+@section('new' , 'المتابعة ')
+
+
+
+
+
+
+{{-- @section('search')
+<form action="{{ route('admin.followups.index') }}" method="GET">
     <div class="input-group mb-3">
         <input name="search" type="text" class="form-control" 
         value="{{ request()->search }}" placeholder="ابحث باستخدام الاسم" >
         <button class="btn btn-primary" id="button-addon2">ابحث</button>
     </div>
 </form>
-@endsection
+@endsection --}}
 
  {{-- <!-- Content Wrapper. Contains page content -->
  <div class="d-flex justify-content-center align-items-center mb-3">

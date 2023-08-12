@@ -1,37 +1,24 @@
-@extends('admin.layout.master')
-@section('title' , 'employees')
-@section('content')
-@section('H1' , 'جميع الموظفين')
-@extends('admin.employees.masteremployee' , ['employees'=>$employees])
-@section('new' , 'اضف موظف جديد')
-@section('search')
-<form action="{{ route('admin.employees.index') }}" method="GET">
-    <div class="input-group mb-3">
-        <input name="search" type="text" class="form-control" 
-        value="{{ request()->search }}" placeholder="ابحث باستخدام الاسم" >
-        <button class="btn btn-primary" id="button-addon2">ابحث</button>
-    </div>
-</form>
-@endsection
-
- {{-- <!-- Content Wrapper. Contains page content -->
- <div class="d-flex justify-content-center align-items-center mb-3">
-    <a href="{{ route('admin.employees.create') }}" class="btn btn-dark">اضف موظف جديد</a>
+<!-- Content Wrapper. Contains page content -->
+<div class="d-flex justify-content-center align-items-center mb-3">
+    <a href="{{ route('admin.employees.create') }}" class="btn btn-dark">@yield('new','اضف موظف جديد')</a>
 </div>
 
 
  @if (session('msg'))
     <div class="alert alert-{{ session('type') }}">{{ session('msg') }}</div>
 @endif
-
-
-    <form action="{{ route('admin.employees.index') }}" method="GET">
-        <div class="input-group mb-3">
-            <input name="search" type="text" class="form-control" 
-            value="{{ request()->search }}" placeholder="ابحث باستخدام الاسم" >
-            <button class="btn btn-primary" id="button-addon2">ابحث</button>
-        </div>
-    </form>
+<div>
+    
+</div>
+@yield('search')
+{{-- <form action="{{ route('admin.employees.index') }}" method="GET">
+    <div class="input-group mb-3">
+        <input name="search" type="text" class="form-control" 
+        value="{{ request()->search }}" placeholder="ابحث باستخدام الاسم" >
+        <button class="btn btn-primary" id="button-addon2">ابحث</button>
+    </div>
+</form> --}}
+    
     
         <div class="row">
             <table class="table table-hover table-bordered table-striped">
@@ -50,7 +37,7 @@
         <td>{{ $employee->id }}</td>
         <td>{{ $employee->name }}</td>
         <td>{{ $employee->jop }}</td>
-        <td>{{ $employee->jobnumber }}</td>
+        <td>{{ $employee->jobid }}</td>
         <td>@if($employee->perod == 'am')     
             صباحي 
             @else
@@ -84,5 +71,3 @@
      $('#search').on('keyup',function() {
      }); 
     </script>
-
-@endpush --}}

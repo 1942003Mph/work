@@ -4,6 +4,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\EmployeesController;
+use App\Http\Controllers\Admin\FollowupsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,7 +20,9 @@ use App\Http\Controllers\Admin\EmployeesController;
 Route::prefix('admin')->name('admin.')->group(function() { 
     Route::get('/' , [AdminController::class , "index"])->name('index');       
     Route::resource('employees', EmployeesController::class);  
-    // Route::resource('caregory', categoryController::class);  
+    Route::get('employeesmorning',[ EmployeesController::class , 'morningperiod'])->name('employeesmorning');  
+    Route::get('employeesevning',[ EmployeesController::class , 'evningperiod'])->name('employeesevning');  
+    Route::resource('followups', FollowupsController::class);  
     // Route::resource('sliders', SliderController::class);  
     // Route::resource('services', ServiceController::class);  
     // Route::resource('ourwork', WorkController::class);  

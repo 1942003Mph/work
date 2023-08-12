@@ -13,11 +13,11 @@ return new class extends Migration
     {
         Schema::create('followups', function (Blueprint $table) {
             $table->id();
-            $table->integer('presencecount');
-            $table->integer('absencecount');
-            $table->string('notes');
-            $table->foreignId('employees_id');
-            $table->string('day');
+            $table->time('timein');
+            $table->time('timeout')->nullable();
+            $table->integer('absencecount')->nullable();
+            $table->string('notes')->nullable();
+            $table->foreignId('jobid');
             $table->timestamps();
         });
     }

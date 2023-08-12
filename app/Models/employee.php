@@ -10,7 +10,7 @@ class employee extends Model
     use HasFactory;
     protected $guarded = [] ;
     public function followup(){
-        return $this->hasMany(followup::class , 'employees_id' , 'id');
+        return $this->hasMany(followup::class , 'jobid' , 'id');
     }
     // public function mission(){
     //     return $this->hasMany(mission::class);

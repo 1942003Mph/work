@@ -39,7 +39,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0 text-dark">لوحة التحكم</h1>
+            <h1 class="m-0 text-dark mb-3">@yield('H1', 'لوحة التحكم')</h1>
           </div>
         </div><!-- /.row -->
       </div>

@@ -17,7 +17,7 @@
 
     <div class="mb-3">
         <label>الرقم الوظيفي</label>
-        <input type="number" class="form-control @error('jobid') is-invalid
+        <input type="text" class="form-control @error('jobid') is-invalid
          @enderror" placeholder="الرقم الوظيفي" value="{{ old('jobid') }}" name="jobid">
         @error('jobid')
             <span class="invalid-feedback">{{ $message }}</span>

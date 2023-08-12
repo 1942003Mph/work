@@ -23,6 +23,34 @@ class EmployeesController extends Controller
 
         return view('admin.employees.index',compact('employees'));
     }
+    
+    public function morningperiod(Request $request)
+    {
+        // $employees = employee::where('perod' , '=' , 'am')->paginate(15);
+        if($request->has('search')) {
+             $employees = employee::where('perod' , '=' , 'am')->latest('id')
+            ->where('name', 'like', '%' . $request->search . '%')
+            ->paginate(20);
+        }else {
+            $employees = employee::where('perod' , '=' , 'am')->paginate(15);
+        }
+        
+        return view('admin.employees.morningperiod',compact('employees'));
+    }
+    
+    public function evningperiod(Request $request)
+    {
+        // $employees = employee::where('perod' , '=' , 'am')->paginate(15);
+        if($request->has('search')) {
+             $employees = employee::where('perod' , '=' , 'pm')->latest('id')
+            ->where('name', 'like', '%' . $request->search . '%')
+            ->paginate(20);
+        }else {
+            $employees = employee::where('perod' , '=' , 'pm')->paginate(15);
+        }
+        
+        return view('admin.employees.evningperiod',compact('employees'));
+    }
 
     /**
      * Show the form for creating a new resource.
@@ -38,7 +66,7 @@ class EmployeesController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'jobnumber'   => 'required',
+            'jobid'   => 'required',
             'name'      => 'required',
             'jop'      => 'required',
             'perod'         => 'required',
@@ -49,7 +77,7 @@ class EmployeesController extends Controller
 
         
         employee::create([
-            'jobnumber'   => $request->jobnumber,
+            'jobid'         => $request->jobid,
             'name'          => $request->name,
             'jop'           => $request->jop,
             'perod'         => $request->perod,
@@ -86,7 +114,7 @@ class EmployeesController extends Controller
         
 
         $request->validate([
-            'jobnumber'   => 'required',
+            'jobid'   => 'required',
             'name'      => 'required',
             'jop'      => 'required',
             'perod'      => 'required',
@@ -95,7 +123,7 @@ class EmployeesController extends Controller
         $employees = employee::find($id);
   
          $employees->update([
-             'jobnumber'  =>$request->jobnumber,
+             'jobid'  =>$request->jobid,
              'jop'          =>$request->jop,
              'name'         =>$request->name,
              'perod'           =>$request->perod,

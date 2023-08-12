@@ -25,7 +25,7 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
           <li class="nav-item">
-            <a href="" class="nav-link">
+            <a href="{{ route("admin.index") }}" class="nav-link">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
                 Dashboard
@@ -49,19 +49,20 @@
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="" class="nav-link">
+                  <a href="{{ route("admin.employeesmorning") }}" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
                     <p> الشفت الصباحي</p>
                   </a>
                 </li>
+                
                 <li class="nav-item">
-                  <a href="" class="nav-link">
+                  <a href="{{ route("admin.employeesevning") }}" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
                     <p> الشفت المسائي</p>
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="" class="nav-link">
+                  <a href="{{ route('admin.employees.create') }}" class="nav-link">
                     {{-- {{ route("admin.services.create") }} --}}
                     <i class="far fa-circle nav-icon"></i>
                     <p>أضف موظف جديد</p>
@@ -70,24 +71,24 @@
               </ul>
             </li>
             <li class="nav-item ">
-              <a href="" class="nav-link">
+              <a href="{{ route("admin.followups.index") }}" class="nav-link">
                 <i class="fa-solid fa-bell-concierge"></i> 
                 <p>
-                  sittings
+                  جدول المتابعة اليومية
                   <i class="right fas fa-angle-left"></i>
                 </p>
               </a>
               <ul class="nav nav-treeview">
                 <li class="nav-item">
-                  <a href="" class="nav-link">
+                  <a href="{{ route("admin.followups.index") }}" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
-                    <p>All services</p>
+                    <p>الشفت الصباحي</p>
                   </a>
                 </li>
                 <li class="nav-item">
                   <a href="" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
-                    <p>create</p>
+                    <p>الشفت المسائي</p>
                   </a>
                 </li>
               </ul>

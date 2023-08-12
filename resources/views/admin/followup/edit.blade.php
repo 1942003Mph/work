@@ -17,7 +17,7 @@
     
     
     <div class="mb-3">
-        <label>المهنة</label>
+        <label>العمل</label>
         <input type="text" class="form-control @error('jop') is-invalid
          @enderror" placeholder="jop" value="{{ old('title', $employees->jop) }}" name="jop">
         @error('jop')
